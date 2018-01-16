@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '1.5.6.RELEASE' apply false
+}
+
+group = 'au.com.rainmore'
+version = '1.0.0'
+description = 'Email Backend Example (Java)'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'idea'
+apply plugin: 'application'
+
+apply from: 'project/assemble.gradle'
+apply from: 'project/logging.gradle'
+apply from: 'project/common.gradle'
+apply from: 'project/jackson.gradle'
+apply from: 'project/boot.gradle'
+apply from: 'project/spring.gradle'
+apply from: 'project/tests.gradle'
+
+
+mainClassName = [group, 'Application'].join('.')
