@@ -7,12 +7,10 @@ dependencies {
 
 bootRun {
     shouldRunAfter clean, processResources
+    jvmArgs += "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
     addResources = true
-
-    if (project.ext.has('debug.transport.port')) {
-        jvmArgs += "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=" + project.ext.get('debug.transport.port')
-    }
 }
+
 
 // Jar should be repackaged by Spring Boot before uploading. We also do not need to preserve the original Jar.
 springBoot {

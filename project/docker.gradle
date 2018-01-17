@@ -1,0 +1,33 @@
+// NOTE: docker plugin depends on `application` plugin
+apply plugin: 'com.bmuschko.docker-java-application'
+
+def composeImageName(String namespace, String name, String tag) {
+    return namespace + '/' + name + ':' + tag
+}
+
+docker {
+   url = project.ext.get('docker.default.engine.url')
+   certPath = new File(project.ext.get('docker.default.cert.path'))
+
+    registryCredentials {
+        username = project.ext.get('docker.default.publish.credentials.username')
+        password = project.ext.get('docker.default.publish.credentials.password')
+    }
+
+    javaApplication {
+        baseImage = project.ext.get('docker.baseImage')
+        ports = [8080]
+        tag = composeImageName(project.ext.get('docker.image.namespace'), project.ext.imageName, project.version)
+    }
+}
+
+dockerDistTar {
+    label([
+            'vendor': project.ext.get('docker.edi.image.label.vendor')
+    ])
+}
+
+task upload {
+    group 'Publish'
+    dependsOn dockerPushImage
+}

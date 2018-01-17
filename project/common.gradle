@@ -6,7 +6,7 @@ dependencies {
 //    compile group: 'commons-io', name: 'commons-io', version: '2.5'
 
     // https://mvnrepository.com/artifact/commons-validator/commons-validator
-//    compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
+    compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
 
     // https://mvnrepository.com/artifact/commons-codec/commons-codec
 //    compile group: 'commons-codec', name: 'commons-codec', version: '1.10'

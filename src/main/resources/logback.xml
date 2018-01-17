@@ -5,7 +5,10 @@
         </encoder>
     </appender>
 
-    <root level="info">
+    <root level="WARN">
         <appender-ref ref="STDOUT" />
     </root>
+
+    <logger name="org.springframework.boot.context.embedded" level="INFO"/>
+    <logger name="au.com.rainmore" level="INFO"/>
 </configuration>

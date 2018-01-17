@@ -6,12 +6,13 @@ buildscript {
 }
 
 plugins {
-    id 'org.springframework.boot' version '1.5.6.RELEASE' apply false
+    id 'org.springframework.boot' version '1.5.9.RELEASE' apply false
+    id 'com.bmuschko.docker-java-application' version '3.2.2' apply false
 }
 
 group = 'au.com.rainmore'
 version = '1.0.0'
-description = 'Email Backend Example (Java)'
+description = 'Email Gateway Example (Java)'
 
 repositories {
     mavenLocal()
