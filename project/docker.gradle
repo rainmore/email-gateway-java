@@ -17,13 +17,13 @@ docker {
     javaApplication {
         baseImage = project.ext.get('docker.baseImage')
         ports = [8080]
-        tag = composeImageName(project.ext.get('docker.image.namespace'), project.ext.imageName, project.version)
+        tag = composeImageName(project.ext.get('docker.default.image.namespace'), project.name, project.version)
     }
 }
 
 dockerDistTar {
     label([
-            'vendor': project.ext.get('docker.edi.image.label.vendor')
+            'vendor': project.ext.get('docker.default.image.label.vendor')
     ])
 }
 

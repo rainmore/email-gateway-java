@@ -29,6 +29,7 @@ apply from: 'project/jackson.gradle'
 apply from: 'project/boot.gradle'
 apply from: 'project/spring.gradle'
 apply from: 'project/tests.gradle'
+apply from: 'project/docker.gradle'
 
 
 mainClassName = [group, 'Application'].join('.')

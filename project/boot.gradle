@@ -1,9 +1,9 @@
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-dependencies {
-    compile 'org.springframework.boot:spring-boot-devtools'
-}
+//dependencies {
+//    compile 'org.springframework.boot:spring-boot-devtools'
+//}
 
 bootRun {
     shouldRunAfter clean, processResources
