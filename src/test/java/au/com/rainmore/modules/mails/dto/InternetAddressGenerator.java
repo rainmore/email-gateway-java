@@ -1,6 +1,5 @@
 package au.com.rainmore.modules.mails.dto;
 
-
 import au.com.rainmore.Generator;
 import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;

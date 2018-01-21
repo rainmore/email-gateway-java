@@ -37,7 +37,6 @@ public class ApiController {
     private MailGunResource  mailGun;
     @Autowired
     private SendGridResource sendGrid;
-    private Random random = new Random();
 
     @InitBinder("messageDto")
     private void initMessageDtoValidator(WebDataBinder binder) {

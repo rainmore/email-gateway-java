@@ -49,7 +49,7 @@ public class SendGridResource implements Resources<ResponseDto> {
     private MultiValueMap<String, String> buildHeaders() {
 
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-        headers.add("authorization", String.format("Bearer %s", getApiKey()));
+        headers.add("Authorization", String.format("Bearer %s", getApiKey()));
         headers.add("content-type", MediaType.APPLICATION_JSON_VALUE);
 
         return headers;
